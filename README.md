@@ -10,11 +10,11 @@
 ### Server:
 
 - cd server
-  -npm install
-  -npm run dev
+  - npm install
+  - npm run dev
 
 ### Client:
 
 - cd server
-  -npm install
-  -npm run dev
+  - npm install
+  - npm run dev
