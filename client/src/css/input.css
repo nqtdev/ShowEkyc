@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.styleTable {
+  @apply border-2;
+}
+.styleTableRow {
+  @apply border-2 hover:bg-gray-100;
+}
+.rowNumber {
+  @apply p-1 text-center w-[3rem];
+}
+.rowKey {
+  @apply border-l-2 px-2 text-left w-[13rem];
+}
+.rowValue {
+  @apply border-l-2 px-2 text-left w-[30rem];
+}
