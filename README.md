@@ -15,6 +15,6 @@
 
 ### Client:
 
-- cd server
+- cd client
   - npm install
   - npm run dev
