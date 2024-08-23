@@ -12,10 +12,10 @@ export const WebSocketProvider = ({ children }) => {
     const socket = new WebSocket("ws://localhost:8080");
     socket.onmessage = (event) => {
       const getWS = JSON.parse(event.data);
-      const getData = getWS.data;
-      setData(getData);
+      const checkWS = getWS.data;
+      console.log(checkWS);
+      setData(getWS);
     };
-
     return () => {
       socket.close();
     };
