@@ -12,8 +12,8 @@
   @apply p-1 text-center w-[3rem];
 }
 .rowKey {
-  @apply border-l-2 px-2 text-left w-[13rem];
+  @apply border-l-2 px-2 text-left w-[15rem];
 }
 .rowValue {
-  @apply border-l-2 px-2 text-left w-[30rem];
+  @apply border-l-2 px-2 text-left w-[36rem];
 }
