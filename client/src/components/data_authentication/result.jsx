@@ -15,7 +15,7 @@ const ResultBoolean = () => {
   }, [data]);
   // const resultColor = result === true ? "text-green-600" : "text-red-600";
   return (
-    <div className="text-left ">
+    <div>
       <span>
         Results of biometric authentication:{""}
         <span className={result === "Đúng" ? "text-green-600" : "text-red-600"}>

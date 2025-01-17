@@ -15,7 +15,7 @@ const ScoreFaceMatching = () => {
   }, [data]);
   const scoreColor = scoreFaceMatching > 90 ? "text-green-600" : "text-red-600";
   return (
-    <div className="text-left ">
+    <div>
       <span>
         Score when comparing fingerprints:{" "}
         <span className={`text-2xl font-bold ${scoreColor}`}>

@@ -1,4 +1,4 @@
-import avatarUser from "../../assets/svg/svg_avatarUser.svg";
+import avatarUser from "../../assets/svg/face.svg";
 const LoadingAvatar = () => {
   return (
     <div>

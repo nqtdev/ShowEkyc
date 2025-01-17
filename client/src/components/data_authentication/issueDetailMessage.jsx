@@ -14,11 +14,11 @@ const DetailMessage = () => {
     }
   }, [data]);
   return (
-    <div className="text-left ">
+    <>
       <span>
         Show failure cause of face authentication: <span>{detailMessage}</span>
       </span>
-    </div>
+    </>
   );
 };
 

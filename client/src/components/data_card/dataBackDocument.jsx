@@ -14,9 +14,12 @@ const BackDocument = () => {
     }
   }, [data]);
   return (
-    <div>
+    <div className="p-1">
+      <h2 className="text-center text-blue-500 font-semibold">
+        Ảnh Scan Mặt Sau
+      </h2>
       {backDocument ? (
-        <img src={backDocument} className="m-auto p-4" alt="ImgCard" />
+        <img src={backDocument} className="w-3/5 m-auto" alt="ImgCard" />
       ) : (
         <LoadingCard />
       )}

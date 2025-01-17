@@ -14,9 +14,12 @@ const FrontDocument = () => {
     }
   }, [data]);
   return (
-    <div>
+    <div className="p-1">
+      <h2 className="text-center text-blue-500 font-semibold">
+        Ảnh Scan Mặt Trước
+      </h2>
       {frontDocument ? (
-        <img src={frontDocument} className="m-auto p-4" alt="ImgCard" />
+        <img src={frontDocument} className="w-3/5 m-auto" alt="ImgCard" />
       ) : (
         <LoadingCard />
       )}

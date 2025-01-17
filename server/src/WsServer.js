@@ -8,7 +8,7 @@ const sourceSocket = new WebSocket(wsUrl, {
   rejectUnauthorized: false, // Bỏ qua kiểm tra chứng chỉ (chỉ dùng trong phát triển)
 });
 // Tạo WebSocket server để client kết nối
-const server = new WebSocket.Server({ port: 8080 });
+const server = new WebSocket.Server({ port: 8081 });
 // Xử lý khi nhận được message từ server nguồn
 sourceSocket.on("message", (data) => {
   try {
@@ -38,4 +38,4 @@ server.on("connection", (client) => {
   });
 });
 
-console.log("WebSocket server đang chạy trên ws://localhost:8080");
+console.log("WebSocket server đang chạy trên ws://localhost:8081");

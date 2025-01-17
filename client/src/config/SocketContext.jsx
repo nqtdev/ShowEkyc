@@ -9,11 +9,11 @@ export const WebSocketContext = createContext();
 export const WebSocketProvider = ({ children }) => {
   const [data, setData] = useState(null);
   useEffect(() => {
-    const socket = new WebSocket("ws://localhost:8080");
+    const socket = new WebSocket("ws://localhost:8081");
     socket.onmessage = (event) => {
       const getWS = JSON.parse(event.data);
-      const checkWS = getWS.data;
-      console.log(checkWS);
+      // const checkWS = getWS.data;
+      // console.log(checkWS);
       setData(getWS);
     };
     return () => {

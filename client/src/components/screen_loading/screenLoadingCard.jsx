@@ -1,8 +1,8 @@
-import viewCard from "../../assets/svg/svg_viewCard.svg";
+import viewCard from "../../assets/svg/card.svg";
 const LoadingCard = () => {
   return (
     <div>
-      <img className="w-full m-auto" src={viewCard} alt="viewCard" />
+      <img className="w-3/5 m-auto" src={viewCard} alt="viewCard" />
     </div>
   );
 };

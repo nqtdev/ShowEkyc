@@ -14,8 +14,9 @@ const UserImage = () => {
   }, [data]);
   return (
     <div>
+      <h2 className="text-center text-blue-500 font-semibold">Ảnh Trong Thẻ</h2>
       {imageUser ? (
-        <img src={imageUser} className="m-auto p-4" alt="AvatarUser" />
+        <img src={imageUser} className="w-1/2 m-auto" alt="AvatarUser" />
       ) : (
         <LoadingAvatar />
       )}

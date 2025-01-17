@@ -13,11 +13,11 @@ const MrzString = () => {
     }
   }, [data]);
   return (
-    <div className="">
-      <span>
-        Mã MRZ: <span className="font-semibold">{mrzString}</span>
+    <>
+      <span className="font-semibold text-blue-500">
+        Mã MRZ : <span className="font-semibold">{mrzString}</span>
       </span>
-    </div>
+    </>
   );
 };
 

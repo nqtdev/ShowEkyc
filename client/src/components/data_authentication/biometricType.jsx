@@ -14,11 +14,11 @@ const BiometricType = () => {
     }
   }, [data]);
   return (
-    <div className="text-left ">
+    <>
       <span>
         Phương thức xác thực : <span>{biometricType}</span>
       </span>
-    </div>
+    </>
   );
 };
 

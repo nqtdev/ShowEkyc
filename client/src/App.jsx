@@ -8,26 +8,32 @@ import BiometricType from "./components/data_authentication/biometricType";
 import ResultBoolean from "./components/data_authentication/result";
 import DetailMessage from "./components/data_authentication/issueDetailMessage";
 import MrzString from "./components/data_card/dataMrzString";
+import CameraComponent from "./components/camera/CameraComponent";
 const App = () => {
   return (
     <WebSocketProvider>
-      <div className="App">
-        <div className=" w-[85%] m-auto mt-2 flex flex-col items-center justify-center">
-          <div className="grid grid-cols-10 gap-2 border-2 rounded-lg p-2">
-            <div className="col-span-4">
-              <UserImage />
-              <div className="flex">
-                <FrontDocument />
-                <BackDocument />
-              </div>
+      <div className="flex items-center justify-center min-h-screen ">
+        <div className="w-[90%] grid grid-cols-12 gap-2 border-2 rounded-lg p-2 bg-gray-100">
+          <div className="col-span-3 border-2 rounded-lg p-2">
+            <CameraComponent />
+          </div>
+          <div className="col-span-3 border-2 rounded-lg p-2">
+            <UserImage />
+            <div className="mt-5">
+              <FrontDocument />
+              <BackDocument />
             </div>
-            <div className="col-span-6">
-              <UserInfo />
+          </div>
+          <div className="col-span-6 border-2 rounded-lg p-2">
+            <UserInfo />
+            <div className="flex justify-around items-center">
               <div>
                 <ScoreFaceMatching />
                 <BiometricType />
-                <DetailMessage />
+              </div>
+              <div>
                 <ResultBoolean />
+                <DetailMessage />
               </div>
             </div>
           </div>
