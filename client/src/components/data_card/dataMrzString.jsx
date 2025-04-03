@@ -4,14 +4,13 @@ import { WebSocketContext } from "../../config/SocketContext";
 
 const MrzString = () => {
   const [mrzString, setMrzString] = useState(null);
-  const data = useContext(WebSocketContext);
-
+  const dataGet = useContext(WebSocketContext);
   useEffect(() => {
-    if (data?.cmdType == "SendInfoDetails") {
-      const getMrzString = data.data.mrzString;
+    if (dataGet?.cmdType === "SendInfoDetails") {
+      const getMrzString = dataGet.data.mrzString;
       setMrzString(getMrzString);
     }
-  }, [data]);
+  }, [dataGet]);
   return (
     <>
       <span className="font-semibold text-blue-500">

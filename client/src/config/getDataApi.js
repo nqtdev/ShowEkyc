@@ -10,7 +10,7 @@
 //     const fetchData = async () => {
 //       try {
 //         const response = await axios.get(url);
-//         setData(response.data.data);
+//         setData(response.data);
 //       } catch (error) {
 //         console.error("Lỗi:", error); // Ghi lỗi vào console
 //         setError(error);

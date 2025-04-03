@@ -3,16 +3,16 @@ import { WebSocketContext } from "../../config/SocketContext";
 
 const DetailMessage = () => {
   const [detailMessage, setDetailMessage] = useState(null);
-  const data = useContext(WebSocketContext);
+  const dataGet = useContext(WebSocketContext);
 
   useEffect(() => {
-    if (data?.cmdType == "SendBiometricAuthentication") {
-      const getDetailMessage = data.data.issueDetailMessage;
+    if (dataGet?.cmdType === "SendBiometricAuthentication") {
+      const getDetailMessage = dataGet.data.issueDetailMessage;
       setDetailMessage(getDetailMessage);
     } else {
       setDetailMessage(null);
     }
-  }, [data]);
+  }, [dataGet]);
   return (
     <>
       <span>

@@ -3,16 +3,16 @@ import { WebSocketContext } from "../../config/SocketContext";
 
 const ScoreFaceMatching = () => {
   const [scoreFaceMatching, setScoreFaceMatching] = useState();
-  const data = useContext(WebSocketContext);
+  const dataGet = useContext(WebSocketContext);
 
   useEffect(() => {
-    if (data?.cmdType == "SendBiometricAuthentication") {
-      const score = data.data.score;
+    if (dataGet?.cmdType === "SendBiometricAuthentication") {
+      const score = dataGet.data.score;
       setScoreFaceMatching(score);
     } else {
       setScoreFaceMatching(null);
     }
-  }, [data]);
+  }, [dataGet]);
   const scoreColor = scoreFaceMatching > 90 ? "text-green-600" : "text-red-600";
   return (
     <div>

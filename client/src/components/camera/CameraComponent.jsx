@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { Camera } from "react-camera-pro";
 
 const CameraComponent = () => {
@@ -7,7 +7,7 @@ const CameraComponent = () => {
   const [cameras, setCameras] = useState([]);
   const [image, setImage] = useState(null);
   const camera = useRef(null);
-  console.log("currentCamera", currentCamera);
+  // console.log("currentCamera", currentCamera);
   const switchToCamera = (index) => {
     if (camera.current && index < numberOfCameras) {
       camera.current.switchCamera(index);
@@ -25,24 +25,37 @@ const CameraComponent = () => {
     }
   };
 
-  useEffect(() => {
-    // Lấy danh sách các thiết bị camera khi component mount
-    const getCameras = async () => {
-      const devices = await navigator.mediaDevices.enumerateDevices();
-      const videoCameras = devices.filter(
-        (device) => device.kind === "videoinput"
-      );
-      console.log("videoCameras", videoCameras);
-      setCameras(videoCameras);
-      setNumberOfCameras(videoCameras.length);
-    };
+  // useEffect(() => {
+  //   // Lấy danh sách các thiết bị camera khi component mount
+  //   const getCameras = async () => {
+  //     const devices = await navigator.mediaDevices.enumerateDevices();
+  //     const videoCameras = devices.filter(
+  //       (device) => device.kind === "videoinput"
+  //     );
+  //     // console.log("videoCameras", videoCameras);
+  //     setCameras(videoCameras);
+  //     setNumberOfCameras(videoCameras.length);
+  //   };
 
-    getCameras();
-  }, []);
-
+  //   getCameras();
+  // }, []);
+  const getListCamera = async () => {
+    const devices = await navigator.mediaDevices.enumerateDevices();
+    const videoCameras = devices.filter(
+      (device) => device.kind === "videoinput"
+    );
+    setCameras(videoCameras);
+    setNumberOfCameras(videoCameras.length);
+  };
   return (
     <div className="relative">
       <div className="mb-4">
+        <button
+          onClick={getListCamera}
+          className="mt-4 px-4 py-2 bg-orange-600 text-white rounded-lg cursor-pointer"
+        >
+          Lấy danh sách Camera
+        </button>
         <Camera
           ref={camera}
           aspectRatio={16 / 9}

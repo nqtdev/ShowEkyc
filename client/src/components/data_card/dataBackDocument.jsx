@@ -5,14 +5,14 @@ import LoadingCard from "../screen_loading/screenLoadingCard";
 
 const BackDocument = () => {
   const [backDocument, setBackDocument] = useState(null);
-  const data = useContext(WebSocketContext);
+  const dataGet = useContext(WebSocketContext);
 
   useEffect(() => {
-    if (data?.cmdType == "SendInfoDetails") {
-      const imageSrc = `data:image/png;base64,${data.data.backDocument}`;
+    if (dataGet?.cmdType === "SendInfoDetails") {
+      const imageSrc = `data:image/png;base64,${dataGet.data.backDocument}`;
       setBackDocument(imageSrc);
     }
-  }, [data]);
+  }, [dataGet]);
   return (
     <div className="p-1">
       <h2 className="text-center text-blue-500 font-semibold">

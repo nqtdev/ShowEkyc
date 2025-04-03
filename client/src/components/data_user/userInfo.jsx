@@ -2,14 +2,14 @@ import { useContext, useState, useEffect } from "react";
 import { WebSocketContext } from "../../config/SocketContext";
 
 const UserInfo = () => {
-  const data = useContext(WebSocketContext);
+  const dataGet = useContext(WebSocketContext);
   const [infoUser, setInfoUser] = useState(null);
 
   useEffect(() => {
-    if (data?.cmdType === "SendInfoDetails") {
-      setInfoUser(data.data.optionalDetails || {});
+    if (dataGet?.cmdType === "SendInfoDetails") {
+      setInfoUser(dataGet.data.optionalDetails || {});
     }
-  }, [data]);
+  }, [dataGet]);
 
   const fields = [
     { label: "Số CCCD", key: "personalNumber" },
@@ -31,7 +31,7 @@ const UserInfo = () => {
 
   return (
     <div>
-      <table className="w-full bg-white">
+      <table className="w-full ">
         <thead>
           <tr>
             <th className="border w-1/12  border-gray-300 text-blue-600 font-semibold">
@@ -51,14 +51,14 @@ const UserInfo = () => {
               key={field.key}
               className={index % 2 === 0 ? "bg-gray-100" : "bg-white"}
             >
-              <td className="border border-gray-300 px-4 py-2 text-center">
+              <td className="border border-gray-300 px-2 py-1 text-center">
                 {index + 1}
               </td>
-              <td className="border border-gray-300 px-4 py-2">
+              <td className="border border-gray-300 px-2 py-1">
                 {field.label}
               </td>
-              <td className="border border-gray-300 px-4 py-2">
-                {infoUser?.[field.key] || "Chờ..."}
+              <td className="border border-gray-300 px-2 py-1">
+                {infoUser?.[field.key] || "..."}
               </td>
             </tr>
           ))}

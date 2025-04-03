@@ -3,16 +3,16 @@ import { WebSocketContext } from "../../config/SocketContext";
 
 const ResultBoolean = () => {
   const [result, setResult] = useState(null);
-  const data = useContext(WebSocketContext);
+  const dataGet = useContext(WebSocketContext);
   useEffect(() => {
-    if (data?.cmdType == "SendBiometricAuthentication") {
-      const getResult = data.data.result;
+    if (dataGet?.cmdType === "SendBiometricAuthentication") {
+      const getResult = dataGet.data.result;
       console.log(typeof getResult);
       setResult(getResult === true ? "Đúng" : "Sai");
     } else {
       setResult(null);
     }
-  }, [data]);
+  }, [dataGet]);
   // const resultColor = result === true ? "text-green-600" : "text-red-600";
   return (
     <div>

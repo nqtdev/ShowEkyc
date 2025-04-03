@@ -4,19 +4,19 @@ import LoadingAvatar from "../screen_loading/screenLoadingAvatar";
 
 const UserImage = () => {
   const [imageUser, setImageUser] = useState(null);
-  const data = useContext(WebSocketContext);
+  const dataGet = useContext(WebSocketContext);
 
   useEffect(() => {
-    if (data?.cmdType == "SendInfoDetails") {
-      const imageSrc = `data:image/png;base64,${data.data.image}`;
+    if (dataGet?.cmdType === "SendInfoDetails") {
+      const imageSrc = `data:image/png;base64,${dataGet.data.image}`;
       setImageUser(imageSrc);
     }
-  }, [data]);
+  }, [dataGet]);
   return (
     <div>
       <h2 className="text-center text-blue-500 font-semibold">Ảnh Trong Thẻ</h2>
       {imageUser ? (
-        <img src={imageUser} className="w-1/2 m-auto" alt="AvatarUser" />
+        <img src={imageUser} className="w-2/3 m-auto" alt="AvatarUser" />
       ) : (
         <LoadingAvatar />
       )}

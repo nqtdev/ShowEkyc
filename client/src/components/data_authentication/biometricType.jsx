@@ -3,16 +3,15 @@ import { WebSocketContext } from "../../config/SocketContext";
 
 const BiometricType = () => {
   const [biometricType, setBiometricType] = useState(null);
-  const data = useContext(WebSocketContext);
-
+  const dataGet = useContext(WebSocketContext);
   useEffect(() => {
-    if (data?.cmdType == "SendBiometricAuthentication") {
-      const getBiometricType = data.data.biometricType;
+    if (dataGet?.cmdType === "SendBiometricAuthentication") {
+      const getBiometricType = dataGet.data.biometricType;
       setBiometricType(getBiometricType);
     } else {
       setBiometricType(null);
     }
-  }, [data]);
+  }, [dataGet]);
   return (
     <>
       <span>
