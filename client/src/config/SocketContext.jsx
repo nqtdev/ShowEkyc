@@ -8,11 +8,9 @@ export const WebSocketProvider = ({ children }) => {
   const [data, setData] = useState(null);
   useEffect(() => {
     try {
-      const socket = new WebSocket("ws://localhost:8081");
+      const socket = new WebSocket("wss://127.0.0.1:9505/ISPlugin");
       socket.onmessage = (event) => {
         const getWS = JSON.parse(event.data);
-        // const checkWS = getWS.data;
-        // console.log(checkWS);
         setData(getWS);
       };
       // return () => {
